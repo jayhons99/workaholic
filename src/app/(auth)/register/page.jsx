@@ -33,10 +33,12 @@ const Page = () => {
     setInvalid(false);
   };
   return (
-    <div className="flex flex-col items-center justify-center mt-32 max-h-screen">
-      <h1 className="text-2xl font-semibold">
-        <span className="text-sky-500">Create</span> an account
-      </h1>
+    <div className="flex flex-col items-center justify-center mt-0 max-h-screen">
+      <div className="text-2xl font-semibold flex flex-col justify-center items-start">
+        <div>
+          <span className="text-sky-500">Create</span> an account
+        </div>
+      </div>
       <div className="bg-white min-w-fit min-h-fit p-4 rounded-lg flex flex-col gap-y-4 items-center mt-4 lg:min-w-[15%]">
         <form className="flex flex-col gap-y-4" onSubmit={createUser}>
           <label htmlFor="name" className="text-2xl">
@@ -51,7 +53,7 @@ const Page = () => {
             onChange={(e) => setName(e.target.value)}
           ></input>
           <label htmlFor="email" placeholder="Email" className="text-2xl">
-            Email:
+            Email*:
           </label>
           <input
             id="email"
@@ -60,9 +62,10 @@ const Page = () => {
             placeholder="Enter email here"
             className="py-2 indent-2"
             onChange={(e) => setEmail(e.target.value)}
+            required
           ></input>
           <label htmlFor="password" className="text-2xl">
-            Password:
+            Password*:
           </label>
           <input
             id="password"
@@ -71,9 +74,10 @@ const Page = () => {
             className="py-2 indent-2"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           ></input>
           <label htmlFor="confirm" className="text-2xl">
-            Confirm Password:
+            Confirm Password*:
           </label>
           <input
             id="confirm"
@@ -82,6 +86,7 @@ const Page = () => {
             className="py-2 indent-2"
             value={confirm}
             onChange={(e) => setConfirm(e.target.value)}
+            required
           ></input>
           {invalid && (
             <p className="text-sm text-red-600/80">Passwords do not match!</p>
