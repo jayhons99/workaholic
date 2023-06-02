@@ -9,3 +9,9 @@ body,
   background-color: #edf6f9;
   color-scheme: "light";
 }
+
+@layer components {
+  .button {
+    @apply bg-sky-500/80 max-w-md p-2 rounded-lg text-lg text-[#edf6f9] transition hover:bg-sky-300/80;
+  }
+}

@@ -18,10 +18,7 @@ export default function Home() {
             job.
           </p>
 
-          <Link
-            href="/"
-            className="bg-sky-500/80 max-w-md p-2 rounded-lg text-lg text-[#edf6f9] transition hover:bg-sky-300"
-          >
+          <Link href="/login" className="button">
             Login/Register
           </Link>
         </div>
@@ -31,6 +28,7 @@ export default function Home() {
           width={400}
           height={400}
           className="hidden lg:inline-block"
+          priority
         />
       </div>
     </main>
